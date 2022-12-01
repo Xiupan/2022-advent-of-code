@@ -17,4 +17,7 @@ calorieArray.forEach((calories) => {
 });
 
 const totalCalories = Object.values(elvesHashmap).sort((a, b) => b - a);
-console.log(totalCalories[0]);
+console.log(`Problem 1 Part 1: ${totalCalories[0]}`);
+
+const topThreeSum = totalCalories.slice(0, 3).reduce((a, b) => a + b, 0);
+console.log(`Problem 1 Part 2: ${topThreeSum}`);
