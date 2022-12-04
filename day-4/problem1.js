@@ -4,6 +4,7 @@ import _ from "lodash";
 const inputArray = input.split("\n");
 
 let completeOverlaps = 0;
+let partialOverlaps = 0;
 
 inputArray.forEach((line) => {
   // each line is a set of two elves' tasks
@@ -26,6 +27,7 @@ inputArray.forEach((line) => {
 
   // we only care if there is any overlap at all, ignore zero overlaps
   if (overlap.length > 0) {
+    partialOverlaps++;
     // if there is, check if it's a complete overlap
     if (
       overlap.length === firstElfTasksParsed.length ||
@@ -36,4 +38,8 @@ inputArray.forEach((line) => {
   }
 });
 
-console.log(completeOverlaps);
+// for problem 1's answer
+console.log(`${completeOverlaps} complete overlaps`);
+
+// for problem 2's answer
+console.log(`${partialOverlaps} partial overlaps`);
