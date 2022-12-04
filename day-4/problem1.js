@@ -25,8 +25,9 @@ inputArray.forEach((line) => {
   // finding overlaps
   const overlap = _.intersection(firstElfTasksParsed, secondElfTasksParsed);
 
-  // we only care if there is any overlap at all, ignore zero overlaps
+  // we only care if there is any overlap at all
   if (overlap.length > 0) {
+    // problem 2 wants to know about partial overlaps
     partialOverlaps++;
     // if there is, check if it's a complete overlap
     if (
